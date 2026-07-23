@@ -34,14 +34,26 @@ _: let
 
   index.byLicenseId =
     listToAttrs (
-      genList
-      (i: let
-        license = builtins.elemAt licenses i;
-      in {
-        name = license.licenseId;
-        value = license;
-      })
-      licenseCount
+      genList (
+        i: let
+          license = builtins.elemAt licenses i;
+        in {
+          name = license.licenseId;
+          value = license;
+        }
+      ) licenseCount
+    );
+
+  index.byName =
+    listToAttrs (
+      genList (
+        i: let
+          license = builtins.elemAt licenses i;
+        in {
+          name = license.name;
+          value = license;
+        }
+      ) licenseCount
     );
 
 in {
