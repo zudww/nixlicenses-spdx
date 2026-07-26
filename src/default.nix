@@ -26,7 +26,7 @@ _: let
     isFsfLibre = optTable.c or null;
   }) licenseCount;
 
-  spdxLicenses = {
+  schema = {
     licenseListVersion = elemAt generated 0;
     releaseDate = elemAt generated 1;
     inherit licenses;
@@ -58,7 +58,7 @@ _: let
 
 in {
   inherit
-    spdxLicenses
+    schema
     index
     ;
 }
