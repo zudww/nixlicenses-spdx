@@ -59,7 +59,8 @@ _: let
 in {
   inherit
     raw
-    schema
     index
+    schema
+    licenses
     ;
 }
