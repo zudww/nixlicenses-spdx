@@ -22,8 +22,8 @@ _: let
     name = elemAt raw (licenseIndex + 2);
     inherit licenseId;
     seeAlso = elemAt raw (licenseIndex + 3);
-    isOsiApproved = optTable.b or false;
-    isFsfLibre = optTable.c or null;
+    isOsiApproved = optTable.c or false;
+    isFsfLibre = optTable.b or null;
   }) licenseCount;
 
   schema = {
